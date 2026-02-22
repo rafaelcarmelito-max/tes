@@ -1,0 +1,175 @@
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – Rafael Calvin Carmelito</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <canvas id="stars"></canvas>
+
+  <header>
+    <div class="logo">Portofolio</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#karya">Karya</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-left">
+      <div class="profile-pic">
+        <img src="img/profile.jpg" alt="Profile">
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <h1 class="title">My Portfolio</h1>
+      <h2 class="subtitle">
+        Halo, Saya <span>Rafael Calvin Carmelito</span>
+      </h2>
+      <p class="desc">
+        Saya adalah siswa kelas 12 Desain Komunikasi Visual (DKV) di
+        <b>SMK Grafika Desa Putera</b>.  
+        Saya memiliki minat dalam bidang <b>fotografi</b> dan <b>editing visual</b>,
+        dengan fokus pada penciptaan karya yang memiliki suasana, emosi,
+        dan karakter visual yang kuat.
+      </p>
+    </div>
+
+    <div class="moon"></div>
+  </section>
+
+  <!-- PENDIDIKAN -->
+  <section class="education-section">
+    <h2 class="section-title">Riwayat Pendidikan</h2>
+
+    <div class="education-box">
+      <div class="education-item">
+        <h3>SMK Grafika Desa Putera</h3>
+        <p>Desain Komunikasi Visual (DKV)</p>
+        <span>2022 – 2025</span>
+      </div>
+
+      <div class="education-item">
+        <h3>SMP Charitas</h3>
+        <span>2020 – 2023</span>
+      </div>
+
+      <div class="education-item">
+        <h3>SD Charitas</h3>
+        <span>2014 – 2020</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- KARYA -->
+  <section id="karya" class="karya-section">
+    <h2 class="section-title">Karya Saya</h2>
+
+    <div class="karya-wrapper">
+      <div class="karya-moon"></div>
+
+      <div class="karya-compact">
+        <div class="karya-box"
+          onclick="openModal('img/foto1.jpg','Fotografi','Mawar merah menjadi titik fokus di antara bunga putih, menghadirkan kontras warna yang kuat dan elegan. Pencahayaan alami menonjolkan detail kelopak dan tekstur, sementara fokus selektif mengarahkan perhatian pada keindahan dan makna visual bunga..')">
+          <img src="img/foto1.jpg" alt="Fotografi">
+        </div>
+
+        <div class="karya-box"
+          onclick="openModal('img/foto2.jpg','Editing Foto','Proses editing pada foto ini difokuskan untuk memperkuat suasana dan emosi dengan pengaturan pencahayaan serta kontras. Bayangan diperdalam untuk menonjolkan aktivitas subjek, sementara warna dibuat lebih hangat agar menghadirkan kesan intim dan natural. Editing dilakukan secara halus tanpa menghilangkan detail asli, sehingga cerita visual tetap terasa autentik.')">
+          <img src="img/foto2.jpg" alt="Editing">
+        </div>
+
+        <div class="karya-box"
+          onclick="openModal('img/foto3.jpeg','Desain Grafis','Logo ini dirancang untuk merepresentasikan identitas North Tune Cafe melalui elemen visual yang sederhana dan mudah dikenali. Ikon cangkir kopi dipadukan dengan warna hangat untuk menciptakan kesan nyaman, santai, dan ramah. Komposisi dibuat seimbang antara ilustrasi dan tipografi agar logo terlihat harmonis serta tetap jelas saat digunakan di berbagai media.')">
+          <img src="img/foto3.jpeg" alt="Desain Grafis">
+        </div>
+
+        <div class="karya-box"
+          onclick="openModal('img/foto4.jpeg','Poster','Poster ini dibuat untuk mendukung promosi film pendek Jejak Dalam Lensa dengan menonjolkan nuansa misteri dan dramatis. Pemilihan warna gelap, pencahayaan kontras, serta tipografi tegas digunakan untuk membangun suasana cerita dan menarik perhatian audiens. Komposisi visual difokuskan pada elemen utama agar pesan film tersampaikan secara jelas, sekaligus tetap estetis dan informatif.')">
+          <img src="img/foto4.jpeg" alt="Poster">
+        </div>
+
+        <div class="karya-box"
+          onclick="openModal('img/foto5.jpeg','Editing','Saya pernah terlibat dalam proses editing film pendek Jejak Dalam Lensa, khususnya pada tahap penyusunan rough cut dengan menggabungkan dan menata klip video sesuai alur cerita. Selain itu, saya juga menambahkan subtitle untuk memperjelas dialog dan membantu penyampaian pesan film agar lebih mudah dipahami oleh penonton.')">
+          <img src="img/foto5.jpeg" alt="Editing">
+        </div>
+
+        <div class="karya-box"
+          onclick="openModal('img/foto6.jpeg','Foto Produk','Saya pernah melakukan foto produk dengan konsep visual yang menonjolkan estetika dan daya tarik produk. Prosesnya mencakup pengaturan properti, pemilihan warna latar, pencahayaan, serta manipulasi foto untuk menghasilkan tampilan yang bersih, menarik, dan sesuai dengan karakter produk.')">
+          <img src="img/foto6.jpeg" alt="Foto Produk">
+        </div>
+
+        <div class="karya-box"
+          onclick="openModal('img/foto7.jpeg','Desain Poster','Saya pernah mendesain poster promosi Movie Day di SMK Grafika Desa Putera. Desain dibuat dengan layout yang rapi dan informatif, menampilkan judul acara, tanggal, daftar film, serta informasi lokasi secara jelas agar mudah dipahami dan menarik perhatian audiens.')">
+          <img src="img/foto7.jpeg" alt="Desain Poster">
+        </div>
+
+        <div class="karya-box"
+          onclick="openModal('img/foto8.jpeg','Proyek Sekolah','Proyek sekolah ini dibuat menggunakan Adobe After Effects sebagai media untuk merancang tampilan game. Saya terlibat langsung dalam proses pembuatannya, khususnya pada penambahan dan pengeditan sound agar efek suara dan audio pendukung sesuai dengan suasana permainan dan meningkatkan pengalaman pengguna.')">
+          <img src="img/foto8.jpeg" alt="Proyek">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal" id="karyaModal">
+    <div class="modal-overlay" onclick="closeModal()"></div>
+
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+
+      <div class="modal-body">
+        <div class="modal-image">
+          <img id="modalImg" src="" alt="Preview">
+        </div>
+
+        <div class="modal-text">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDesc"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="kontak-section">
+    <h2 class="section-title">Kontak</h2>
+
+    <div class="kontak-box">
+      <div class="kontak-item">
+        <span class="icon">✉</span>
+        <div>
+          <small>Email</small>
+          <p>rafael.carmelito@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="kontak-item">
+        <span class="icon">☎</span>
+        <div>
+          <small>Telepon</small>
+          <p>0877 8222 2508</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKGROUND -->
+  <div class="galaxy-bg"></div>
+  <div class="planet planet-big"></div>
+  <div class="planet planet-small"></div>
+  <div class="milkyway"></div>
+  <div class="planet planet-bottom-right"></div>
+
+  <!-- SCRIPT (HARUS DI PALING BAWAH) -->
+  <script src="script.js"></script>
+
+</body>
+</html>

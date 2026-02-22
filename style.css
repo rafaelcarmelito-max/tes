@@ -1,0 +1,540 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0b0020, #150032, #1f0048);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* STAR CANVAS */
+#stars {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 0, 40, 0.4);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+nav a {
+    margin-left: 25px;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #b589ff;
+}
+
+/* HERO */
+.hero {
+    padding: 30px 10%;
+    padding-top: 130px;
+    display: flex;
+    gap: 60px;
+    position: relative;
+}
+
+.profile-pic {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+
+    /* Glow to match galaxy theme */
+    box-shadow:
+        0 0 30px rgba(180, 140, 255, 0.6),
+        0 0 60px rgba(120, 80, 200, 0.4);
+
+    border: 2px solid rgba(200, 160, 255, 0.6);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* VERY IMPORTANT */
+    display: block;
+}
+
+
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 0 0 25px #a364ff;
+}
+
+.subtitle {
+    font-size: 26px;
+    margin-top: 15px;
+}
+
+.subtitle span {
+    color: #d6b3ff;
+}
+
+.desc {
+    margin-top: 15px;
+    width: 550px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* BULAN SABIT */
+.moon {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 60% 50%, #a277ff 0%, #6e2bff00 70%);
+    filter: blur(10px);
+    opacity: 0.6;
+}
+
+/* SECTION TITLE */
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 25px #b77fff;
+}
+
+/* === COMPACT ZIG ZAG GRID === */
+.karya-compact {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+    max-width: 1000px;
+    margin: 60px auto 0;
+    position: relative;
+}
+
+.karya-box {
+    height: 200px;
+    border-radius: 40px;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(160, 100, 255, 0.18),
+        rgba(90, 50, 160, 0.18)
+    );
+
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(200, 150, 255, 0.3);
+    box-shadow: 0 0 25px rgba(160, 100, 255, 0.25);
+
+    font-weight: 600;
+    letter-spacing: 0.4px;
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* ZIG ZAG EFFECT */
+.karya-box:nth-child(odd) {
+    transform: translateY(-12px);
+}
+
+.karya-box:nth-child(even) {
+    transform: translateY(12px);
+}
+
+/* HOVER */
+.karya-box:hover {
+    transform: translateY(0) scale(1.05);
+    box-shadow: 0 0 40px rgba(200, 150, 255, 0.6);
+}
+
+@media (max-width: 900px) {
+    .karya-compact {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .karya-compact {
+        grid-template-columns: 1fr;
+    }
+
+    .karya-box {
+        height: 120px;
+    }
+
+    .karya-box:nth-child(odd),
+    .karya-box:nth-child(even) {
+        transform: translateY(0);
+    }
+}
+
+.karya-box {
+    position: relative;
+    overflow: hidden; /* prevents image from spilling */
+}
+
+/* image inside karya-box */
+.karya-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* keeps orientation */
+    object-position: center;  /* centered crop */
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+/* keep text above image */
+.karya-box span,
+.karya-box p,
+.karya-box h3 {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* === CONTACT BOX === */   
+.kontak-box {
+    max-width: 420px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(160, 100, 255, 0.15),
+        rgba(80, 40, 150, 0.15)
+    );
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(200, 150, 255, 0.3);
+    box-shadow: 0 0 30px rgba(160, 100, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.kontak-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.kontak-item .icon {
+    font-size: 26px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(180, 120, 255, 0.25);
+    box-shadow: 0 0 15px rgba(180, 120, 255, 0.5);
+}
+
+.kontak-item small {
+    font-size: 12px;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+.kontak-item p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.kontak-section {
+    padding-top: 90px;
+    margin-top: 50px;
+    padding-bottom: 90px;
+}
+
+/* =====================
+   GALAXY BACKGROUND
+===================== */
+body {
+    background: radial-gradient(circle at top, #2a0a5e, #0b0220);
+    overflow-x: hidden;
+}
+
+/* Star layer */
+.galaxy-bg {
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(1px 1px at 20% 30%, white, transparent),
+        radial-gradient(1px 1px at 80% 40%, white, transparent),
+        radial-gradient(1px 1px at 50% 70%, white, transparent),
+        radial-gradient(1px 1px at 10% 80%, white, transparent),
+        radial-gradient(1px 1px at 90% 90%, white, transparent);
+    background-size: 200px 200px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* =====================
+   PLANET DECORATION
+===================== */
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(0.5px);
+    z-index: -1;
+}
+
+/* Big glowing planet */
+.planet-big {
+    width: 320px;
+    height: 320px;
+    top: 120px;
+    right: -120px;
+    background: radial-gradient(circle at 30% 30%, #b18cff, #4a1d8a);
+    box-shadow:
+        0 0 80px rgba(170, 120, 255, 0.7),
+        0 0 140px rgba(120, 80, 255, 0.5);
+}
+
+/* Small crescent planet */
+.planet-small {
+    width: 180px;
+    height: 180px;
+    bottom: -60px;
+    left: 80px;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #8a5cff);
+    box-shadow:
+        0 0 60px rgba(180, 140, 255, 0.6);
+    clip-path: ellipse(60% 50% at 40% 50%);
+}
+
+/* =====================
+   MILKY WAY (SUBTLE)
+===================== */
+.milkyway {
+    position: absolute;
+    width: 640px;
+    height: 300px;
+
+    /* Position behind introduction */
+    top: 45%;
+    left: 35%;
+
+    /* Mirror + tilt */
+    transform: translate(-50%, -50%) rotate(-18deg) scaleX(-1);
+
+    /* Milky Way core */
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(235, 215, 255, 0.85) 0%,
+            rgba(200, 170, 255, 0.75) 22%,
+            rgba(160, 120, 240, 0.6) 42%,
+            rgba(120, 80, 200, 0.45) 58%,
+            rgba(80, 40, 140, 0.3) 68%,
+            rgba(40, 20, 90, 0.18) 75%,
+            transparent 88%
+        );
+
+    border-radius: 50%;
+
+    /* Softer presence */
+    filter: blur(14px) saturate(115%);
+    opacity: 0.65;
+
+    /* Glow */
+    box-shadow:
+        0 0 50px rgba(200, 160, 255, 0.45),
+        0 0 110px rgba(150, 100, 255, 0.3),
+        0 0 180px rgba(100, 60, 200, 0.2);
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+.planet-bottom-right {
+    width: 220px;
+    height: 220px;
+
+    bottom: -320px;
+    right: 90px;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(255, 255, 255, 0.9),
+            rgba(180, 150, 255, 0.85) 25%,
+            rgba(120, 80, 200, 0.9) 55%,
+            rgba(50, 20, 120, 1) 75%
+        );
+
+    box-shadow:
+        0 0 40px rgba(160, 120, 255, 0.6),
+        0 0 90px rgba(120, 80, 200, 0.45),
+        inset -20px -30px 60px rgba(0, 0, 0, 0.5);
+
+    filter: saturate(120%);
+}
+
+/* === EDUCATION SECTION === */
+.education-section {
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+.education-box {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    gap: 22px;
+}
+
+.education-item {
+    padding: 22px 26px;
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(160, 100, 255, 0.15),
+        rgba(90, 50, 160, 0.15)
+    );
+
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(200, 150, 255, 0.3);
+    box-shadow: 0 0 25px rgba(160, 100, 255, 0.25);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 40px rgba(200, 150, 255, 0.6);
+}
+
+.education-item h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.education-item p {
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+.education-item span {
+    font-size: 13px;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 5, 30, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+/* Modal Box */
+.modal-content {
+  position: relative;
+  max-width: 900px;
+  width: 90%;
+  margin: 5% auto;
+  background: linear-gradient(135deg, #2a1558, #12082e);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(180, 120, 255, 0.35);
+  padding: 30px;
+  animation: zoomIn 0.4s ease;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Layout */
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.modal-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+.modal-text h2 {
+  color: #e7d9ff;
+  margin-bottom: 10px;
+}
+
+.modal-text p {
+  color: #d0c6ff;
+  line-height: 1.6;
+}
+
+/* Animasi */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+}
